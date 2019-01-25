@@ -29,7 +29,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '@/assets/common.css'
   ],
 
   /*
@@ -51,6 +52,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: "https://nuxt-blog-service-9f6b6.firebaseio.com",
   },
 
   /*
@@ -61,7 +63,9 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
     }
+  },
+  router: {
+    middleware: ['auth-cookie']
   }
 }
